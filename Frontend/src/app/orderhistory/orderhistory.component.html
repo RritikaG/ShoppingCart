@@ -1,0 +1,22 @@
+<app-main-nav></app-main-nav>
+<h3 class="text-center text-dark">YOUR ORDER HISTORY</h3>
+
+<div class="container bg-dark " style="border: white 2px solid">
+<div *ngFor="let i of orderhistoryitem">
+  <div class="d-flex flex-wrap">
+    <div class="border border-dark p-2"><img style="height: 250px;width: 200px" src={{i.items.image}}></div>
+    <div class="ml-3 border border-dark p-3">
+      <div>ProductNo. : {{i.items.productId}}</div> <h4>{{i.items.name}}</h4>
+      <h4>this is the description of the product</h4>
+      <h5>Price: Rs.{{i.items.price}}</h5>
+      <span class="badge badge-primary">{{i.items.category}}</span>
+      <span class="badge badge-secondary">{{i.items.sub_category}}</span>
+      <span class="badge badge-success">Satisfied</span>
+      <span class="badge badge-danger">Best-dealer</span>
+      <span class="badge badge-warning">Tags</span>
+      <div>OrderDate:{{i.date}}</div>
+  </div>
+  </div>
+  <hr class="border border-success">
+</div>
+</div>

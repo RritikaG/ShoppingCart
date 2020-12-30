@@ -1,0 +1,57 @@
+<!--<nav class="navbar navbar-dark navbar-expand-md bg-dark justify-content-between">-->
+<!--  <div class="container-fluid">-->
+<!--    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-nav">-->
+<!--      <span class="navbar-toggler-icon"></span>-->
+<!--    </button>-->
+<!--    <div class="navbar-collapse collapse dual-nav w-50 order-1 order-md-0">-->
+<!--      <ul class="navbar-nav">-->
+<!--        <li class="nav-item">-->
+<!--          <a class="nav-link i-size" [routerLink]="['/orderhistory']"><i class="fas fa-history"></i></a>-->
+
+<!--        </li>-->
+<!--        <li class="nav-item">-->
+<!--          <a class="nav-link i-size" [routerLink]="['/myprofile']"><i class="fas fa-address-card"></i></a>-->
+<!--        </li>-->
+
+<!--      </ul>-->
+<!--    </div>-->
+<!--    <a [routerLink]="['/home']"class="navbar-brand mx-auto d-block text-center order-0 order-md-1 w-30 company-style"><h3>Ritika's Shopping Cart  <i class="fas fa-shopping-cart"></i></h3></a>-->
+<!--    <div class="navbar-collapse collapse dual-nav w-50 order-2">-->
+<!--      <ul class="nav navbar-nav ml-auto">-->
+<!--        <li class="nav-item"><a class="nav-link i-size" [routerLink]="['/Mycart']"><i class="fa fa-shopping-cart"></i></a></li>-->
+<!--        <li class="nav-item"><a class="nav-link i-size" [routerLink]="['/userlogin']"><i class="fas fa-user-check"></i></a></li>-->
+<!--        <li class="nav-item"><a class="nav-link i-size" (click)="logout()"><i class="fas fa-user-times"></i></a></li>-->
+<!--        <li class="nav-item"><a class="nav-link i-size" [routerLink]="['/sign-up']"><i class="fas fa-user-plus"></i></a></li>-->
+<!--      </ul>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</nav>-->
+
+<nav class="navbar navbar-expand-md navbar-light bg-light">
+  <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarCollapse">
+    <div class="navbar-nav">
+      <a href="#" class="nav-item nav-link " style="font-family:'HoloLens MDL2 Assets';font-size: xx-large" >SHO<span style="color: lightcoral">pP</span>iFY <i class="fas fa-shopping-cart" style="color: lightseagreen"></i></a>
+    </div>
+    <div class="navbar-nav ml-auto">
+      <a href="#" class="nav-item nav-link" [routerLink]="['/home']" >Home</a>
+      <a href="#" class="nav-item nav-link" [routerLink]="['/Mycart']" >MyCart</a>
+<!--      <a href="#" class="nav-item nav-link" [routerLink]="['/myprofile']" >Profile </a>-->
+      <a href="#" class="nav-item nav-link" [routerLink]="['/orderhistory']" >OrderHistory</a>
+<!--      <a href="#" class="nav-item nav-link " (click)="logout()" >LOGOUT</a>-->
+      <a href="#" *ngIf="signup" class="nav-item nav-link " [routerLink]="['/sign-up']" >SignUp</a>
+      <div class="dropdown">
+      <a type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+         {{userdata.username}}
+      </a>
+      <div class="dropdown-menu">
+        <a class="dropdown-item" [routerLink]="['/myprofile']" >Profile </a>
+        <a class="dropdown-item"  (click)="logout()" >LOGOUT</a>
+      </div>
+      </div>
+    </div>
+  </div>
+</nav>

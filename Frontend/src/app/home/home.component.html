@@ -1,0 +1,225 @@
+<div class="wraper">
+  <nav class="navbar navbar-expand-sm navbar-light bg-light">
+    <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <div class="navbar-nav ml-auto">
+        <a href="#" class="nav-item nav-link " style="font-family:'HoloLens MDL2 Assets';font-size: xx-large" >SHO<span style="color: lightcoral">pP</span>iFY <i class="fas fa-shopping-cart" style="color: lightseagreen"></i></a>
+      </div>
+      <div class="navbar-nav ml-auto">
+        <a href="#" class="nav-item nav-link" [routerLink]="['/home']" >Home</a>
+        <a href="#" class="nav-item nav-link" [routerLink]="['/Mycart']" >MyCart</a>
+        <div class="dropdown">
+          <a type="button" style="background-color: #23d5ab" class="btn  dropdown-toggle" data-toggle="dropdown">
+            {{userdata.username}}
+          </a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" [routerLink]="['/myprofile']" >Profile </a>
+            <a class="dropdown-item"  (click)="logout()" >LOGOUT</a>
+          </div>
+        </div>
+        <a href="#" class="nav-item nav-link" [routerLink]="['/orderhistory']" >OrderHistory</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="head-bck ">
+    <div class="header-image">
+
+<!--      <div class="logo-menu">-->
+<!--        <div class="logo">-->
+<!--          <a href="#"><img src=https://i.postimg.cc/mrRmxSxD/logo.png alt="logo golden"></a>-->
+<!--        </div>-->
+<!--        <div class="menu">-->
+<!--          <ul class="navimenu">-->
+<!--            <li><a (click)="showhome()">Home</a></li>-->
+<!--            <li><a href="#services" [routerLink]="['/Mycart']">Cart</a></li>-->
+<!--            <li><a href="#portfolio" [routerLink]="['/orderhistory']">OrderHistory</a></li>-->
+<!--            <li><a href="#about" [routerLink]="['/myprofile']">Profile</a></li>-->
+<!--            <li><a href="#contact" (click)="logout()">LOGOUT</a></li>-->
+<!--          </ul>-->
+<!--        </div>-->
+<!--      </div>-->
+
+      <h1 class="welcome"> Welcome To Our WebShop!</h1>
+      <p class="top-ph">
+        it's nice to meet you <br>
+        <a href="#" class="btn1">Find out our Trending Products</a>
+      </p>
+    </div>
+  </header>
+
+
+  <div class="wraper-services">
+    <div class="services">
+      <h2 class="head-name" id="services"> PRODUCTS</h2>
+      <p class="proin">We provide a widr range of trendy Watches,wallets and Glasses</p>
+    </div>
+
+    <div class="wraper-block">
+      <div class="wraper-icon-block">
+        <div class="serv-icon"><i class="fas fa-glasses circle-icon p-3 " style="background-color:lightcoral;font-size:35px;color:white;border-radius: 50%;border: black 2px solid"></i></div>
+        <h3  class="mt-1" (click)="showglasses()">GLASSES</h3>
+        <p>Proin iaculis purus consequat sem cure digni ssim. Donec porttitora entum suscipit aenean rhoncus posuere odio in tincidunt.</p>
+      </div>
+
+      <div class="wraper-icon-block">
+        <i class="material-icons serv-icon md-52 orange600 p-2" style="color:white;border-radius: 50%;background-color: lightseagreen;border: black 2px solid">
+          watch
+        </i>
+        <h3 class="mt-1" (click)="showclothes()">WATCHES</h3>
+        <p>Proin iaculis purus consequat sem cure digni ssim. Donec porttitora entum suscipit aenean rhoncus posuere odio in tincidunt.</p>
+      </div>
+      <div class="wraper-icon-block">
+        <i class="material-icons serv-icon md-52 orange600 p-2" style="color:white;border-radius: 50%;border:black 2px solid;background-color: limegreen">
+          account_balance_wallet
+        </i>
+        <h3 class="mt-1"  (click)="showbooks()">WALLETS</h3>
+        <p>Proin iaculis purus consequat sem cure digni ssim. Donec porttitora entum suscipit aenean rhoncus posuere odio in tincidunt.</p>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="wraper-portfolio">
+    <div class="portfolio">
+      <h2 class="head-name" id="portfolio">Filter By Price
+      </h2>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="inlineRadioOptions" (change)="handleSelectedevent($event,200,500)">
+        <label class="form-check-label" >200-500</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="inlineRadioOptions" (change)="handleSelectedevent($event,500,1000)">
+        <label class="form-check-label" >500-1000</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="inlineRadioOptions" (change)="handleSelectedevent($event,1000,2000)">
+        <label class="form-check-label" >1000-2000</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="inlineRadioOptions" (change)="handleSelectedevent($event,1500,4000)">
+        <label class="form-check-label" >1500-4000</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="inlineRadioOptions" (change)="handleSelectedevent($event,0,9000)">
+        <label class="form-check-label" >100-more</label>
+      </div>
+      <div class="form-check-inline">
+      <input class="form-control " type="search" placeholder="Search Product" aria-label="Search" name="pnam" [(ngModel)]="pname">
+      <button class="btn btn-outline-dark  my-2 my-sm-0" style="background-color: lightcoral" (click)="searchname()">Search</button>
+      </div>
+    </div>
+    <div class="d-flex flex-wrap ">
+<div *ngFor="let i of items">
+      <div class="wraper-top m-2 ">
+        <div class="lef-top"><img  src="{{i.image}}" class="top-image"></div>
+        <div class="wraper-port-text">
+          <h3>{{i.name}}</h3>
+          <p>Price:{{i.price}}</p>
+          <span (click)="goToDetails(i.productId)" class="text-info">View Deatils</span>
+        </div>
+      </div>
+</div>
+    </div>
+
+  <div class="wraper-team mt-2">
+
+    <div class="team">
+      <h1 class="head-name text-primary"> our amazing team</h1>
+    </div>
+
+    <div class="wraper-team-circle">
+
+      <div class="wraper-circle">
+        <div class="image-circle"></div>
+        <div class="wraper-team-text">
+          <h3>Rahul Goyal</h3>
+          <p>Coder</p>
+        </div>
+
+        <div class="social">
+          <div class="circle-left-twitter circle">
+            <a href="#"></a>
+          </div>
+          <div class="circle-left-facebook circle">
+            <a href="#"></a>
+          </div>
+          <div class="circle-left-pinterest circle">
+            <a href="#"></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="wraper-circle">
+        <div class="image-circle"></div>
+        <div class="wraper-team-text">
+          <h3>Ritika Gupta</h3>
+          <p>Owner + Coder</p>
+        </div>
+
+        <div class="social">
+          <div class="circle-left-twitter circle ">
+            <a href="#"></a>
+          </div>
+          <div class="circle-left-facebook circle ">
+            <a href="#"></a>
+          </div>
+          <div class="circle-left-google circle">
+            <a href="#"></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="wraper-circle">
+        <div class="image-circle"></div>
+        <div class="wraper-team-text">
+          <h3>Roshni Dhanjal</h3>
+          <p>Graphic Designer</p>
+        </div>
+
+        <div class="social">
+          <div class="circle-left-twitter circle">
+            <a href="#"></a>
+          </div>
+          <div class="circle-left-facebook circle">
+            <a href="#"></a>
+          </div>
+
+          <div class="circle-left-google circle">
+            <a href="#"></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="team-text-bottom">
+      <p>While using this site, you agree to have read and accepted our terms of use, cookie and privacy policy.</p>
+    </div>
+  </div>
+  <footer class="wraper-footer">
+    <div class="wraper-foot">
+      <div class="foot">
+        <p>© Copyright 2020 RitikaShoppify.com</p>
+      </div>
+
+      <div class="foot">
+        <div class="circle-footer-twitter">
+          <a href="#"></a>
+        </div>
+        <div class="circle-footer-facebook">
+          <a href="#"></a>
+        </div>
+        <div class="circle-footer-pinterest">
+          <a href="#"></a>
+        </div>
+        <div class="circle-footer-google">
+          <a href="#"></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</div>
+</div>

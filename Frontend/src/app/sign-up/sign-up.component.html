@@ -1,0 +1,46 @@
+
+<div class="modal-dialog border-primary">
+  <div class="modal-content">
+    <div class="modal-heading">
+      <h2 class="text-center mt-2 text-black-50 company-style" >Sign-up</h2>
+    </div>
+    <div class="modal-body">
+      <div class="form-group">
+        <label class="text-dark" style="font-family: Algerian;font-size: x-large">USERNAME</label>
+        <div class="input-group">
+							<span class="input-group-addon">
+							<span class="glyphicon glyphicon-user"></span>
+							</span>
+          <input type="text" class="form-control" placeholder="User Name" name="username"[(ngModel)]="username"/>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="text-dark" style="font-family: Algerian;font-size: x-large">PASSWORD</label>
+        <div class="input-group">
+							<span class="input-group-addon">
+							<span class="glyphicon glyphicon-lock"></span>
+							</span>
+          <input type="password" class="form-control" placeholder="Password" name="password"[(ngModel)]="password"/>
+
+        </div>
+
+      </div>
+      <div class="form-group">
+        <label class="text-dark" style="font-family: Algerian;font-size: x-large">EMAIL</label>
+        <div class="input-group">
+							<span class="input-group-addon">
+							<span class="glyphicon glyphicon-user"></span>
+							</span>
+          <input type="text" class="form-control" placeholder="Email" name="email" [(ngModel)]="email"/>
+        </div>
+      </div>
+
+      <div class="form-group text-center">
+        <button class="btn btn-danger btn-block" (click)="signupfuc()">Signup</button>
+        <div class="text-danger mt-2" routerLink="'/userlogin'">HAVE AN ACCOUNT? LOGIN HERE</div>
+      </div>
+    </div>
+  </div>
+</div>
+<h2 class="text-black-50 text-center">WELCOME TO RTIKA'S SHOPPING CART</h2>
+

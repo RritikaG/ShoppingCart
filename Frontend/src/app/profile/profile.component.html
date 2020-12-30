@@ -1,0 +1,48 @@
+<app-main-nav></app-main-nav>
+<div class="container  p-4 mt-4" style="border: black 3px solid">
+<div class="d-flex">
+  <div>
+<div class="card mt-3 text-dark" style="width: 40rem">
+  <div class="mt-2">
+  <img style="object-fit: cover;width: 100px;height: 100px" src="../assets/images/profile1.jpg">
+  </div>
+  <h4 class="company-style">{{userdata.username}}</h4>
+  <hr class="border-top border-primary">
+  <div>
+  <p>FirstName:{{userdata.firstname}}</p>
+  <p>LastName:{{userdata.lastname}}</p>
+  <p>Email:{{userdata.email}}</p>
+  <p>Password:{{userdata.password}}</p>
+  </div>
+  <h5>Role:{{userdata.role}}</h5>
+  <div>
+    <a href="#"><i class="fa fa-twitter"></i></a>
+    <a href="#"><i class="fa fa-linkedin"></i></a>
+    <a href="#"><i class="fa fa-facebook"></i></a>
+  </div>
+  <span *ngIf="rolecondition"><h5 class="btn btn-warning" [routerLink]="'/addproduct'">ADD PRODUCT</h5></span>
+</div>
+  </div>
+  <div class="ml-5 " style="width: 60%">
+    <div class="form-group">
+      <label for="usr">USERNAME</label>
+      <input type="text" name="username" [(ngModel)]="userdata.username" value="{{userdata.username}}" class="form-control" id="usr">
+    </div>
+    <div class="form-group">
+      <label for="usr1">PASSWORD</label>
+      <input type="text" name="password" [(ngModel)]="userdata.password" value="{{userdata.password}}" class="form-control" id="usr1">
+    </div>
+    <div class="form-group">
+      <label for="usr2">EMAIL</label>
+      <input type="text" name="email" [(ngModel)]="userdata.email" value="{{userdata.email}}" class="form-control" id="usr2">
+    </div>
+    <div class="form-group">
+      <label for="usr3" >FIRSTNAME</label>
+      <input type="text" name="firstname " [(ngModel)]="userdata.firstname"  value="{{userdata.firstname}}" class="form-control" id="usr3">
+    </div>
+    <hr>
+    <div class="btn btn-warning text-center" (click)="updateprofile()">UPDATE</div>
+  </div>
+</div>
+</div>
+<h1 class="text-dark mt-5" style="text-align:center;font-family: Algerianon">HEY! {{userdata.username}}  WELCOME TO YOUR PROFILE </h1>
